@@ -1,0 +1,34 @@
+@model InforceUrll.Models.ShortUrl
+@{
+    ViewData["Title"] = "Create a new short URL";
+}
+
+<br />
+
+<div class="jumbotron">
+
+    <h1>URL Shortener</h1>
+
+    <br />
+
+    <p>By entering in a URL in the text field below, I will create a short URL for you!</p>
+
+    <br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <div class="input-group input-group-lg">
+                @Html.LabelFor(model => model.OriginalUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(model => model.OriginalUrl, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.OriginalUrl, "", new { @class = "text-danger" })
+                </div>
+                @* <input asp-for="OriginalUrl" class="form-control" placeholder="Paste the URL to be shorten..." /> *@
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">Shorten URL</button>
+                </span>
+            </div>
+        </div>
+}
+</div>

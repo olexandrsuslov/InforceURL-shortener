@@ -1,0 +1,53 @@
+@model IEnumerable<InforceUrll.Models.ShortUrl>
+
+@{
+    ViewData["Title"] = "URL Table";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Url table</h1>
+</div>
+
+<h1>All Users</h1>
+
+@if(Model.Any())
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OriginalUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OriginalUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                @if(User.Identity.IsAuthenticated){
+                <td>
+                    @Html.ActionLink("Info", "Show", new { id=item.Id })
+                    
+                    @Html.ActionLink("Delete", "Index", "ShortUrl")
+                </td>
+                }
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3>No Short Url at the moment</h3>
+}
+@if(User.Identity.IsAuthenticated){
+    @Html.ActionLink("Add", "Create", "ShortUrl")
+}

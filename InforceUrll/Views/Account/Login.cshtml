@@ -1,0 +1,58 @@
+@model InforceUrll.Models.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Log in";
+}
+<h2>Login</h2>
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.Label("Password", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Login" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<div>
+    @Html.ActionLink("Click here to Signup", "Register", "Account")
+</div>
+
+@* <div class="row"> *@
+@*     <div class="col-md-4"> *@
+@*         <form asp-action="Login" method="post" asp-controller="Account"> *@
+@*             <div asp-validation-summary="ModelOnly" class="text-danger"></div> *@
+@*             <div class="form-group"> *@
+@*                 <label asp-for="Email" class="control-label">Email</label> *@
+@*                 <input type="text" asp-for="Email" class="form-control" /> *@
+@*                 <span asp-validation-for="Email" class="text-danger"></span> *@
+@*             </div> *@
+@*             <div class="form-group"> *@
+@*                 <label asp-for="Password" class="control-label">Password</label> *@
+@*                 <input asp-for="Password" class="form-control" /> *@
+@*                 <span asp-validation-for="Password" class="text-danger"></span> *@
+@*             </div> *@
+@*              *@
+@*             <div class="form-group"> *@
+@*                 <button type="submit">login</button> *@
+@*             </div> *@
+@*         </form> *@
+@*     </div> *@
+@* </div> *@
