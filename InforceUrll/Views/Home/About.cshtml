@@ -1,7 +1,26 @@
-﻿@{
+﻿@model InforceUrll.Models.AboutContent
+
+@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<h2>Algorithm</h2>
 
-<p>Use this area to provide additional information.</p>
+
+    
+    
+        @if (User.IsInRole("admin"))
+        {using (Html.BeginForm())
+         {
+             @Html.AntiForgeryToken()
+             @Html.TextAreaFor(m => m.AlgoStr, new { style = "max-width:1000px;width:100%;height:100px;" })
+             <div class="col-md-10">
+                 <input type="submit" value="Edit" class="btn btn-default"/>
+             </div>
+         }
+        }
+        else
+        {
+            <p>@Model.AlgoStr</p>
+        }
+       
+

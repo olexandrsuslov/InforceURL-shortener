@@ -297,16 +297,47 @@
         <Compile Include="Migrations\202212311740377_second.Designer.cs">
           <DependentUpon>202212311740377_second.cs</DependentUpon>
         </Compile>
+        <Compile Include="Migrations\202301022026291_third.cs" />
+        <Compile Include="Migrations\202301022026291_third.Designer.cs">
+          <DependentUpon>202301022026291_third.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Migrations\202301050050054_fourth.cs" />
+        <Compile Include="Migrations\202301050050054_fourth.Designer.cs">
+          <DependentUpon>202301050050054_fourth.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Migrations\202301050057001_fifth.cs" />
+        <Compile Include="Migrations\202301050057001_fifth.Designer.cs">
+          <DependentUpon>202301050057001_fifth.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Migrations\202307062253581_sixth.cs" />
+        <Compile Include="Migrations\202307062253581_sixth.Designer.cs">
+          <DependentUpon>202307062253581_sixth.cs</DependentUpon>
+        </Compile>
         <Compile Include="Migrations\Configuration.cs" />
+        <Compile Include="Models\AboutContent.cs" />
         <Compile Include="Models\Role.cs" />
         <Compile Include="Models\ShortUrl.cs" />
         <Compile Include="Models\User.cs" />
+        <Compile Include="Models\UsersRoleProvider.cs" />
         <Compile Include="Models\ViewModels\LoginViewModel.cs" />
         <Compile Include="Models\ViewModels\RegisterViewModel.cs" />
+        <Compile Include="Models\ViewModels\UrlViewModel.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
         <Content Include="AccessDenied.cshtml" />
+        <Content Include="Client\angular.json" />
+        <Content Include="Client\package.json" />
+        <Content Include="Client\README.md" />
+        <Content Include="Client\src\app\app.component.css" />
+        <Content Include="Client\src\app\app.component.html" />
+        <Content Include="Client\src\assets\.gitkeep" />
+        <Content Include="Client\src\favicon.ico" />
+        <Content Include="Client\src\index.html" />
+        <Content Include="Client\src\styles.css" />
+        <Content Include="Client\tsconfig.app.json" />
+        <Content Include="Client\tsconfig.json" />
+        <Content Include="Client\tsconfig.spec.json" />
         <Content Include="Content\bootstrap-theme.css" />
         <Content Include="Content\bootstrap-theme.min.css" />
         <Content Include="Content\bootstrap.css" />
@@ -319,6 +350,14 @@
         <Content Include="Scripts\bootstrap.js" />
         <Content Include="Scripts\bootstrap.min.js" />
         <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+        <Content Include="Scripts\client\3rdpartylicenses.txt" />
+        <Content Include="Scripts\client\favicon.ico" />
+        <Content Include="Scripts\client\index.html" />
+        <Content Include="Scripts\client\main.02bea11aab482073.js" />
+        <Content Include="Scripts\client\main.6eb4f7b6e81ba850.js" />
+        <Content Include="Scripts\client\polyfills.c0c6c3b9f7bc57ea.js" />
+        <Content Include="Scripts\client\runtime.fb7cab9f2605ac5d.js" />
+        <Content Include="Scripts\client\styles.ef46db3751d8e999.css" />
         <Content Include="Scripts\jquery-3.3.1.js" />
         <Content Include="Scripts\jquery-3.3.1.min.js" />
         <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -329,9 +368,6 @@
         <Content Include="Scripts\jquery.validate.unobtrusive.js" />
         <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
         <Content Include="Scripts\modernizr-2.8.3.js" />
-        <Content Include="systemjs-angular-loader.js" />
-        <Content Include="systemjs.config.js" />
-        <Content Include="tsconfig.json" />
         <Content Include="Views\Account\AccessDenied.cshtml" />
         <Content Include="Views\Account\Login.cshtml" />
         <Content Include="Views\Account\Register.cshtml" />
@@ -354,9 +390,6 @@
         <Content Include="Views\Home\Index.cshtml" />
     </ItemGroup>
     <ItemGroup>
-        <Folder Include="App_Data" />
-    </ItemGroup>
-    <ItemGroup>
         <Content Include="fonts\glyphicons-halflings-regular.woff2" />
         <Content Include="fonts\glyphicons-halflings-regular.woff" />
         <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -373,11 +406,25 @@
       <EmbeddedResource Include="Migrations\202212311740377_second.resx">
         <DependentUpon>202212311740377_second.cs</DependentUpon>
       </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202301022026291_third.resx">
+        <DependentUpon>202301022026291_third.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202301050050054_fourth.resx">
+        <DependentUpon>202301050050054_fourth.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202301050057001_fifth.resx">
+        <DependentUpon>202301050057001_fifth.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202307062253581_sixth.resx">
+        <DependentUpon>202307062253581_sixth.cs</DependentUpon>
+      </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
-      <TypeScriptCompile Include="app\app.component.ts" />
-      <TypeScriptCompile Include="app\app.module.ts" />
-      <TypeScriptCompile Include="app\main.ts" />
+      <TypeScriptCompile Include="Client\src\app\app-routing.module.ts" />
+      <TypeScriptCompile Include="Client\src\app\app.component.spec.ts" />
+      <TypeScriptCompile Include="Client\src\app\app.component.ts" />
+      <TypeScriptCompile Include="Client\src\app\app.module.ts" />
+      <TypeScriptCompile Include="Client\src\main.ts" />
     </ItemGroup>
     <PropertyGroup>
         <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

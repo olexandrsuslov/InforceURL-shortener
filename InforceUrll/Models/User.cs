@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace InforceUrll.Models
 {
     public class User
@@ -9,5 +11,12 @@ namespace InforceUrll.Models
         public string Password { get; set; }
         public int? RoleId { get; set; }
         public Role Role { get; set; }
+        
+        public List<ShortUrl> ShortUrls { get; set; }
+
+        public User()
+        {
+            ShortUrls = new List<ShortUrl>();
+        }
     }
 }

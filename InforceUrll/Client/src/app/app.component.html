@@ -1,0 +1,28 @@
+
+    <table>
+        <tr>
+            <th>
+                OriginalUrl
+            </th>
+            <th>
+                ShortenedUrl
+            </th>
+        </tr>
+        <tr *ngForOf="let value of values">    <!-- LOOP -->
+            <td>{{value.OriginalUrl}}</td>
+            <td>{{value.ShortenedUrl}}</td>
+            <td>
+                <a href="'http://127.0.0.1:5000/ShortUrl/Show/{{value.Id}}'">
+                    ~/ShortUrl/Show/{{value.Id}}
+                </a>
+            </td>
+            <td>
+                <a href="'http://127.0.0.1:5000/ShortUrl/Delete/{{value.Id}}'">
+                    ~/ShortUrl/Delete/{{value.Id}}
+                </a>
+            </td>
+        </tr>
+    </table>
+
+
+

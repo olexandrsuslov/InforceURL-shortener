@@ -1,4 +1,4 @@
-@model InforceUrll.Models.ShortUrl
+@model InforceUrll.Models.ViewModels.UrlViewModel
 @{
     ViewData["Title"] = "Create a new short URL";
 }
@@ -17,18 +17,19 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-        <div class="form-horizontal">
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             <div class="input-group input-group-lg">
-                @Html.LabelFor(model => model.OriginalUrl, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.TextBoxFor(model => model.OriginalUrl, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.OriginalUrl, "", new { @class = "text-danger" })
-                </div>
-                @* <input asp-for="OriginalUrl" class="form-control" placeholder="Paste the URL to be shorten..." /> *@
-                <span class="input-group-btn">
-                    <button class="btn btn-primary" type="submit">Shorten URL</button>
-                </span>
+            @Html.LabelFor(model => model.OriginalUrl, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.OriginalUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OriginalUrl, "", new { @class = "text-danger" })
             </div>
+            @* <input asp-for="OriginalUrl" class="form-control" placeholder="Paste the URL to be shorten..." /> *@
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">Shorten URL</button>
+            </span>
         </div>
+    </div>
 }
 </div>

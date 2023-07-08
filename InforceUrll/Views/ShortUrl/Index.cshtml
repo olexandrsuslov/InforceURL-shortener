@@ -1,53 +1,29 @@
+@using System.Text
 @model IEnumerable<InforceUrll.Models.ShortUrl>
 
 @{
     ViewData["Title"] = "URL Table";
 }
 
+<!doctype html>
+<html lang="en" data-critters-container>
+<head>
+    <meta charset="utf-8">
+    <title>Myapp</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.ef46db3751d8e999.css"></head>
+<body>
+
 <div class="text-center">
     <h1 class="display-4">Url table</h1>
 </div>
 
-<h1>All Users</h1>
+<app-root></app-root>
 
-@if(Model.Any())
-{
-    <table class="table">
-        <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.OriginalUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-        @foreach (var item in Model) {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.OriginalUrl)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                @if(User.Identity.IsAuthenticated){
-                <td>
-                    @Html.ActionLink("Info", "Show", new { id=item.Id })
-                    
-                    @Html.ActionLink("Delete", "Index", "ShortUrl")
-                </td>
-                }
-            </tr>
-        }
-        </tbody>
-    </table>
-}
-else
-{
-    <h3>No Short Url at the moment</h3>
-}
-@if(User.Identity.IsAuthenticated){
-    @Html.ActionLink("Add", "Create", "ShortUrl")
-}
+<script src="~/Scripts/client/runtime.fb7cab9f2605ac5d.js" type="module"></script>
+<script src="~/Scripts/client/polyfills.c0c6c3b9f7bc57ea.js" type="module"></script>
+<script src="~/Scripts/client/main.6eb4f7b6e81ba850.js" type="module"></script>
+</body>
+</html>

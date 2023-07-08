@@ -37,9 +37,16 @@
             </span>
             @{
                 var p = ViewData["Path"];
-                var route = new StringBuilder($"http://127.0.0.1:5000//ShortUrls/RedirectTo/{p}");
+                var route = new StringBuilder($"~/Url/{p}");
             }
-            @Html.ActionLink($"{route}", "RedirectTo", new { path = p})
+            @Html.ActionLink($"{route}", "RedirectTo", new { id = p})
         </li>
+        <li>
+            <span class="col-md-2">
+                <strong>Creator: </strong>
+            </span>
+            @ViewData["Creator"]
+        </li>
+        
     </ul>
 </div>
